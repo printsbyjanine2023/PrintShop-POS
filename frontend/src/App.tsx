@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { LoginPage } from '@/pages/LoginPage';
 import { DashboardPage } from '@/pages/DashboardPage';
 import { POSPage } from '@/pages/POSPage';
+import { InventoryPage } from '@/pages/InventoryPage';
+import { OrdersPage } from '@/pages/OrdersPage';
+import { CustomersPage } from '@/pages/CustomersPage';
+import { AccountingPage } from '@/pages/AccountingPage';
 import { useAuthStore } from '@/stores/auth';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -33,6 +37,38 @@ export const AppRoutes: React.FC = () => {
           element={
             <ProtectedRoute>
               <POSPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/inventory"
+          element={
+            <ProtectedRoute>
+              <InventoryPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <OrdersPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/customers"
+          element={
+            <ProtectedRoute>
+              <CustomersPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/accounting"
+          element={
+            <ProtectedRoute>
+              <AccountingPage />
             </ProtectedRoute>
           }
         />
